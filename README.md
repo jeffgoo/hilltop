@@ -44,6 +44,7 @@ Builds
 
     ./hilltop build request myproject myworkflow
     ./hilltop build open mybuildlifeid
+    ./hilltop build run --servergroup "Candidate Integration" mybuildlifeid myworkflow
 
 ## contributing
 

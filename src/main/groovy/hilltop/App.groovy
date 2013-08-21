@@ -112,10 +112,19 @@ class App {
         describe 'Working with Anthill builds'
 
         command('request') {
-          describe 'Request a new Anthill Buildlife'
+          describe 'Request a new Anthill buildlife'
           arguments exactly: 2, name1: 'project', name2: 'workflow'
           execute { p ->
             handler.request(p.arguments()[0], p.arguments()[1])
+          }
+        }
+
+        command('run') {
+          describe 'Run a secondary workflow against an Anthill buildlife'
+          arguments exactly: 2, name1: 'buildlife', name2: 'workflow'
+          options { s longOpt: 'servergroup', 'The environment to run the workflow in' }
+          execute { p ->
+            handler.run(p.arguments()[0], p.arguments()[1], p.s)
           }
         }
 

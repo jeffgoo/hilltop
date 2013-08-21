@@ -59,6 +59,10 @@ class BuildCommands {
     thread.join()
   }
 
+  def run(buildlife, workflowName, serverGroup) {
+    //...
+  }
+
   private void submitRequest(request) {
     def service = new BuildServiceImplClient()
     try {
